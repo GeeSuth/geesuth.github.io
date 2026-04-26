@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-    // Experinces 
+    // Experinces
+    $('#exp-mc').append(readTextFile('jobs/mc.htm'));
+    $('#exp-sure').append(readTextFile('jobs/sure.global.htm'));
     $('#exp-fleet').append(readTextFile('jobs/fleet.system.htm'));
     $('#exp-itec').append(readTextFile('jobs/itec.htm'));
     $('#exp-reemas').append(readTextFile('jobs/reemas.htm'));
@@ -9,6 +11,7 @@ $(document).ready(function() {
 
 
     // Lesson
+    $('#les-ai-agent').append(readTextFile('lessons/ai.agent.htm'));
     $('#les-cs50').append(readTextFile('lessons/cs50.htm'));
     $('#les-api').append(readTextFile('lessons/api.htm'));
 
