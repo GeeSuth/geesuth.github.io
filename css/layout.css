@@ -1,0 +1,128 @@
+.page-shell {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2.75rem);
+    width: 100%;
+    max-width: 1520px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.25rem;
+    padding-bottom: 3rem;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1200px) and (min-width: 961px) {
+    .page-shell {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+.sidebar {
+    position: sticky;
+    top: var(--page-pad);
+    align-self: start;
+    max-height: calc(100vh - (var(--page-pad) * 2));
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.main-column {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.content-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+}
+
+.content-group {
+    scroll-margin-top: 1.5rem;
+}
+
+.group-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+}
+
+.group-modules::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--brand), rgba(122, 47, 54, 0.05));
+    border-radius: 2px;
+}
+
+.module-slot {
+    position: relative;
+    padding-left: 1.75rem;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+}
+
+.module-slot::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1.35rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--panel-solid);
+    border: 3px solid var(--brand);
+    box-shadow: 0 0 0 4px var(--brand-soft);
+    z-index: 1;
+}
+
+.module-slot.is-loaded {
+    opacity: 1;
+    transform: none;
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--line);
+}
+
+@media (max-width: 960px) {
+    .page-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .group-modules::before,
+    .module-slot::before {
+        display: none;
+    }
+
+    .module-slot {
+        padding-left: 0;
+    }
+}

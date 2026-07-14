@@ -1,0 +1,82 @@
+:root {
+    --brand: #7a2f36;
+    --brand-deep: #5c2127;
+    --brand-soft: rgba(122, 47, 54, 0.12);
+    --ink: #1d1a17;
+    --ink-muted: #5c554e;
+    --paper: #f3efe8;
+    --paper-2: #ebe4d8;
+    --panel: rgba(255, 252, 247, 0.88);
+    --panel-solid: #fffdf9;
+    --line: rgba(29, 26, 23, 0.1);
+    --chip: #2f4550;
+    --chip-text: #f7f3ec;
+    --shadow: 0 18px 50px rgba(29, 26, 23, 0.12);
+    --radius: 18px;
+    --radius-sm: 10px;
+    --font-display: "Syne", sans-serif;
+    --font-body: "Figtree", sans-serif;
+    --sidebar-width: 320px;
+    --page-pad: clamp(1rem, 3vw, 2.5rem);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    font-family: var(--font-body);
+    background-color: var(--paper);
+    background-image:
+        radial-gradient(ellipse 80% 55% at 10% -10%, rgba(122, 47, 54, 0.18), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 100% 0%, rgba(47, 69, 80, 0.16), transparent 50%),
+        linear-gradient(160deg, var(--paper) 0%, var(--paper-2) 100%);
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    z-index: 0;
+}
+
+a {
+    color: var(--brand);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+a:hover {
+    color: var(--brand-deep);
+}
+
+img {
+    max-width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-deep);
+}

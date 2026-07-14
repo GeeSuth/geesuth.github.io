@@ -1,0 +1,265 @@
+/* Restyle existing content modules without rewriting each HTM file */
+
+.module-slot > .col-lg-8,
+.module-slot > .col-lg-12,
+.module-slot > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.module-slot .div-right,
+.module-slot .card-right-postion {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+}
+
+.module-slot .card {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--panel-solid);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(29, 26, 23, 0.06);
+}
+
+.module-slot .card-header {
+    height: auto !important;
+    min-height: 0;
+    padding: 1rem 1.15rem;
+    background: transparent;
+    border-bottom: 1px solid var(--line);
+}
+
+.module-slot .card-header h6 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink);
+}
+
+.module-slot .card-header h6 strong {
+    font-weight: 800;
+}
+
+.module-slot .p-location {
+    margin: 0.25rem 0 0;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.module-slot .periods {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+}
+
+.module-slot .card-body {
+    padding: 1rem 1.15rem 1.2rem;
+}
+
+.module-slot .info-div {
+    display: none !important;
+}
+
+.module-slot .head-short-story,
+.module-slot h7.head-short-story {
+    display: block;
+    margin: 0.85rem 0 0.45rem;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand);
+}
+
+.module-slot .accordion-item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm) !important;
+    overflow: hidden;
+    background: var(--paper);
+}
+
+.module-slot .accordion-button {
+    font-family: var(--font-body);
+    font-weight: 600;
+    box-shadow: none !important;
+    background: transparent;
+    color: var(--ink);
+}
+
+.module-slot .accordion-button:not(.collapsed) {
+    background: var(--brand-soft);
+    color: var(--brand-deep);
+}
+
+.module-slot .accordion-body {
+    background: #fff;
+}
+
+.module-slot .chip-container {
+    width: 100%;
+    padding: 0.2rem 0 0.4rem;
+    background: transparent;
+    font-family: var(--font-body);
+}
+
+.module-slot .click-chip,
+.module-slot .click-chip-hover,
+.module-slot .basic-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.3rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    background: var(--chip) !important;
+    background-image: none !important;
+    animation: none !important;
+    color: var(--chip-text);
+    cursor: default;
+    transition: transform 0.2s var(--ease), filter 0.2s var(--ease);
+}
+
+.module-slot .click-chip-hover {
+    cursor: pointer;
+}
+
+.module-slot .click-chip-hover:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.module-slot .chip-p {
+    margin: 0;
+    height: auto;
+    color: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.module-slot .image-for-chip {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.module-slot .flip {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.module-slot .flip > .front,
+.module-slot .flip > .back {
+    display: block;
+    width: 100%;
+    height: min(420px, 55vw);
+    color: #fff;
+    background-color: #2a2623;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: scroll !important;
+    transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
+}
+
+.module-slot .flip > .front {
+    transform: rotateY(0deg);
+}
+
+.module-slot .flip > .back {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: rotateY(-180deg);
+}
+
+.module-slot .flip:hover > .front {
+    transform: rotateY(180deg);
+}
+
+.module-slot .flip:hover > .back {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.module-slot .card-project-img {
+    height: 200px;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.module-slot .some-project-card {
+    background-color: var(--paper);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    border: 1px solid var(--line);
+    transition: transform 0.25s var(--ease);
+}
+
+.module-slot .some-project-card:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -60px;
+    left: -85px;
+    background: var(--brand);
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.5s var(--ease);
+}
+
+.module-slot .some-project-card:hover {
+    transform: translateY(-2px);
+}
+
+.module-slot .some-project-card:hover:before {
+    transform: scale(22);
+}
+
+.module-slot .some-project-card:hover p,
+.module-slot .some-project-card:hover .card-title {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.module-slot .carousel {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.module-slot .break {
+    display: none;
+}
+
+/* Hide redundant "0" tenure placeholders */
+.module-slot [id$="Periods"] {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .modal-content {
+        width: 94%;
+    }
+}

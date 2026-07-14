@@ -1,0 +1,67 @@
+{
+  "brand": "GeeSuth",
+  "name": "Abdllah Bin Hatheem Ali",
+  "role": "Senior Full-Stack Engineer",
+  "photo": {
+    "active": "me2",
+    "alt": "Photo of Abdllah Bin Hatheem Ali",
+    "style": "orbit",
+    "shape": "rounded",
+    "position": "center 18%",
+    "gallery": {
+      "classic": "img/im1.png",
+      "me1": "img/me/me1.jpg",
+      "me2": "img/me/me2.jpg"
+    }
+  },
+  "contacts": [
+    { "icon": "telephone", "label": "+966541798323", "href": "tel:+966541798323" },
+    { "icon": "envelope", "label": "geesuth@outlook.com", "href": "mailto:geesuth@outlook.com" },
+    { "icon": "github", "label": "GitHub", "href": "https://github.com/GeeSuth", "external": true },
+    { "icon": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com/in/geesuth/", "external": true }
+  ],
+  "skills": [".NET 8", ".NET 9", "C#", "Blazor", "ASP.NET Core", "Azure"],
+  "nav": [
+    { "id": "experience", "label": "Work Experience", "href": "#section-experience" },
+    { "id": "education", "label": "Education & Courses", "href": "#section-education" },
+    { "id": "projects", "label": "My Projects", "href": "#section-projects" }
+  ],
+  "groups": [
+    {
+      "id": "experience",
+      "title": "Work Experience",
+      "eyebrow": "Career",
+      "modules": [
+        { "id": "exp-mc", "src": "jobs/mc.htm" },
+        { "id": "exp-sure", "src": "jobs/sure.global.htm" },
+        { "id": "exp-fleet", "src": "jobs/fleet.system.htm" },
+        { "id": "exp-itec", "src": "jobs/itec.htm" },
+        { "id": "exp-reemas", "src": "jobs/reemas.htm" },
+        { "id": "exp-sky", "src": "jobs/skyCenter.htm" }
+      ]
+    },
+    {
+      "id": "education",
+      "title": "Education & Courses",
+      "eyebrow": "Learning",
+      "modules": [
+        { "id": "les-ai-agent", "src": "lessons/ai.agent.htm" },
+        { "id": "les-cs50", "src": "lessons/cs50.htm" },
+        { "id": "les-api", "src": "lessons/api.htm" }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "My Projects",
+      "eyebrow": "Build",
+      "modules": [
+        { "id": "pro-win", "src": "projects/win.htm" },
+        { "id": "pro-web", "src": "projects/web.htm" },
+        { "id": "pro-some", "src": "projects/some.htm" }
+      ]
+    }
+  ],
+  "footer": "Copyright 2026 © GeeSuthSoft",
+  "thanksHref": "thanks.html",
+  "thanksLabel": "Thanks & gratitude"
+}
