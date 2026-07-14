@@ -39,7 +39,12 @@
             '<aside class="profile-panel">' +
             '<p class="profile-brand">' + site.brand + '</p>' +
             '<div class="profile-identity">' +
+            '<div class="profile-photo-frame" aria-hidden="false">' +
+            '<span class="profile-photo-ring" aria-hidden="true"></span>' +
+            '<span class="profile-photo-orbit" aria-hidden="true"></span>' +
+            '<span class="profile-photo-orbit profile-photo-orbit--lag" aria-hidden="true"></span>' +
             '<div class="profile-photo" style="background-image:url(\'' + site.photo + '\')" role="img" aria-label="' + site.photoAlt + '"></div>' +
+            '</div>' +
             '<div class="profile-identity-text">' +
             '<h1 class="profile-name">' + site.name + '</h1>' +
             '<p class="profile-role">' + site.role + '</p>' +

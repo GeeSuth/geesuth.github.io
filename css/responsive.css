@@ -132,11 +132,33 @@ body {
         font-size: clamp(1.75rem, 8vw, 2.2rem);
     }
 
-    .profile-photo {
-        width: 96px;
-        height: 96px;
-        border-radius: 18px;
+    .profile-photo-frame {
+        --photo-size: 96px;
         margin: 0;
+    }
+
+    .profile-photo-ring {
+        inset: -5px;
+        border-radius: 20px;
+    }
+
+    .profile-photo-ring::before {
+        inset: 2px;
+        border-radius: 18px;
+    }
+
+    .profile-photo-orbit {
+        inset: -10px;
+    }
+
+    .profile-photo-orbit--lag {
+        inset: -14px;
+    }
+
+    .profile-photo {
+        border-radius: 16px;
+        width: calc(var(--photo-size) - 4px);
+        height: calc(var(--photo-size) - 4px);
     }
 
     .profile-name {
@@ -304,10 +326,12 @@ body {
         gap: 0.7rem;
     }
 
+    .profile-photo-frame {
+        --photo-size: 76px;
+    }
+
     .profile-photo {
-        width: 76px;
-        height: 76px;
-        border-radius: 16px;
+        border-radius: 14px;
     }
 
     .profile-quote {

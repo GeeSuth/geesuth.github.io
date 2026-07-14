@@ -69,17 +69,135 @@
     gap: 0.25rem;
 }
 
+.profile-photo-frame {
+    --photo-size: 132px;
+    position: relative;
+    width: var(--photo-size);
+    height: var(--photo-size);
+    margin: 0.45rem 0 0.55rem;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    animation: photo-in 0.8s var(--ease) both;
+}
+
+.profile-photo-ring {
+    position: absolute;
+    inset: -7px;
+    border-radius: 26px;
+    background: conic-gradient(
+        from 0deg,
+        var(--brand) 0deg,
+        #2f4550 90deg,
+        #c4a484 180deg,
+        var(--brand-deep) 270deg,
+        var(--brand) 360deg
+    );
+    animation: photo-ring-spin 8s linear infinite;
+    z-index: 0;
+}
+
+.profile-photo-ring::before {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 23px;
+    background: var(--panel-solid);
+}
+
+.profile-photo-orbit,
+.profile-photo-orbit--lag {
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    border: 1px dashed rgba(122, 47, 54, 0.28);
+    animation: photo-orbit 12s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.profile-photo-orbit::before,
+.profile-photo-orbit::after,
+.profile-photo-orbit--lag::before,
+.profile-photo-orbit--lag::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 3px var(--brand-soft), 0 0 12px rgba(122, 47, 54, 0.45);
+}
+
+.profile-photo-orbit::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-photo-orbit::after {
+    bottom: 8%;
+    right: 8%;
+    width: 6px;
+    height: 6px;
+    background: #2f4550;
+}
+
+.profile-photo-orbit--lag {
+    inset: -20px;
+    border-style: solid;
+    border-color: rgba(47, 69, 80, 0.18);
+    animation-duration: 18s;
+    animation-direction: reverse;
+}
+
+.profile-photo-orbit--lag::before {
+    top: 18%;
+    left: 6%;
+    width: 5px;
+    height: 5px;
+    background: #c4a484;
+}
+
+.profile-photo-orbit--lag::after {
+    bottom: 12%;
+    left: 22%;
+    width: 4px;
+    height: 4px;
+    background: var(--brand-deep);
+}
+
 .profile-photo {
-    width: 132px;
-    height: 132px;
-    margin: 0.25rem 0 0.35rem;
-    border-radius: 22px;
+    position: relative;
+    z-index: 1;
+    width: calc(var(--photo-size) - 6px);
+    height: calc(var(--photo-size) - 6px);
+    margin: 0;
+    border-radius: 20px;
     background-size: cover;
     background-position: center;
     box-shadow: 0 12px 28px rgba(122, 47, 54, 0.25);
-    border: 3px solid rgba(255, 253, 249, 0.9);
-    animation: photo-in 0.8s var(--ease) both;
-    flex-shrink: 0;
+    border: 3px solid rgba(255, 253, 249, 0.95);
+    overflow: hidden;
+    animation: photo-breathe 5.5s ease-in-out infinite;
+}
+
+.profile-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(255, 253, 249, 0.35) 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    transform: translateX(-120%);
+    animation: photo-shine 4.8s ease-in-out 1.2s infinite;
+    pointer-events: none;
 }
 
 @keyframes photo-in {
@@ -90,6 +208,43 @@
     to {
         opacity: 1;
         transform: none;
+    }
+}
+
+@keyframes photo-ring-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes photo-orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes photo-breathe {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 12px 28px rgba(122, 47, 54, 0.22);
+    }
+    50% {
+        transform: scale(1.025);
+        box-shadow: 0 16px 34px rgba(122, 47, 54, 0.34);
+    }
+}
+
+@keyframes photo-shine {
+    0%,
+    55% {
+        transform: translateX(-120%);
+    }
+    75% {
+        transform: translateX(120%);
+    }
+    100% {
+        transform: translateX(120%);
     }
 }
 
@@ -318,5 +473,18 @@
         opacity: 1;
         transform: none;
         transition: none;
+    }
+
+    .profile-photo-ring,
+    .profile-photo-orbit,
+    .profile-photo-orbit--lag,
+    .profile-photo,
+    .profile-photo::after {
+        animation: none !important;
+    }
+
+    .profile-photo-orbit,
+    .profile-photo-orbit--lag {
+        display: none;
     }
 }
