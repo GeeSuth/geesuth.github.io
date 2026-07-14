@@ -1,9 +1,19 @@
 {
   "brand": "GeeSuth",
   "name": "Abdllah Bin Hatheem Ali",
-  "role": ".NET Developer",
-  "photo": "img/im1.png",
-  "photoAlt": "Photo of Abdllah Bin Hatheem Ali",
+  "role": "Senior Full-Stack Engineer",
+  "photo": {
+    "active": "me2",
+    "alt": "Photo of Abdllah Bin Hatheem Ali",
+    "style": "orbit",
+    "shape": "rounded",
+    "position": "center 18%",
+    "gallery": {
+      "classic": "img/im1.png",
+      "me1": "img/me/me1.jpg",
+      "me2": "img/me/me2.jpg"
+    }
+  },
   "contacts": [
     { "icon": "telephone", "label": "+966541798323", "href": "tel:+966541798323" },
     { "icon": "envelope", "label": "geesuth@outlook.com", "href": "mailto:geesuth@outlook.com" },

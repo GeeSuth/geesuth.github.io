@@ -200,6 +200,48 @@
     pointer-events: none;
 }
 
+.profile-photo-glow {
+    position: absolute;
+    inset: -10px;
+    border-radius: 28px;
+    background: radial-gradient(circle at 50% 40%, rgba(122, 47, 54, 0.35), transparent 68%);
+    animation: photo-glow-pulse 3.2s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.photo-shape-circle .profile-photo,
+.photo-shape-circle .profile-photo-ring,
+.photo-shape-circle .profile-photo-ring::before,
+.photo-shape-circle .profile-photo-glow {
+    border-radius: 50%;
+}
+
+.photo-shape-soft .profile-photo {
+    border-radius: 28px;
+}
+
+.photo-style-simple .profile-photo {
+    animation: photo-in 0.8s var(--ease) both;
+}
+
+.photo-style-glow .profile-photo-ring,
+.photo-style-glow .profile-photo-orbit {
+    display: none;
+}
+
+@keyframes photo-glow-pulse {
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(0.98);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+}
+
 @keyframes photo-in {
     from {
         opacity: 0;
@@ -478,6 +520,7 @@
     .profile-photo-ring,
     .profile-photo-orbit,
     .profile-photo-orbit--lag,
+    .profile-photo-glow,
     .profile-photo,
     .profile-photo::after {
         animation: none !important;
