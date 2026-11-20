@@ -1,0 +1,330 @@
+.github-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.github-projects-status {
+    margin: 0;
+    padding: 1.1rem 1.2rem;
+    border-radius: var(--radius);
+    border: 1px dashed var(--line);
+    background: var(--panel);
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+}
+
+.github-projects-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+}
+
+.github-projects-intro {
+    flex: 1 1 360px;
+    margin: 0;
+    max-width: 62ch;
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.github-projects-rail-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding-top: 0.1rem;
+}
+
+.github-projects-hint {
+    margin-right: 0.1rem;
+    color: var(--ink-muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.github-rail-btn {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--panel-solid);
+    color: var(--brand);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.github-rail-btn:hover:not(:disabled) {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.github-rail-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.github-projects-grid {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.4rem 0.2rem 1rem;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 0.2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+
+.github-projects-grid:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .github-projects-grid {
+        cursor: grab;
+    }
+}
+
+.github-projects-grid.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+}
+
+.github-projects-grid.is-dragging * {
+    user-select: none;
+}
+
+.github-projects-grid::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.github-card {
+    position: relative;
+    display: flex;
+    flex: 0 0 min(340px, 80vw);
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1.15rem 1.15rem 1rem;
+    background: var(--panel-solid);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(29, 26, 23, 0.06);
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.github-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand), #2f4550 70%, #c4a484);
+    opacity: 0.85;
+}
+
+.github-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(122, 47, 54, 0.28);
+    box-shadow: var(--shadow);
+}
+
+.github-card-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    min-width: 0;
+}
+
+.github-card-icon {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 1.05rem;
+}
+
+.github-card-name {
+    margin: 0.2rem 0 0;
+    min-width: 0;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    overflow-wrap: anywhere;
+}
+
+.github-card-name a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.github-card-name a:hover {
+    color: var(--brand);
+    text-decoration: underline;
+}
+
+.github-card-desc {
+    margin: 0;
+    flex: 1;
+    color: var(--ink-muted);
+    font-size: 0.87rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.github-card-desc.is-empty {
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.github-card-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.github-topic {
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand-deep);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.github-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    margin-top: 0.15rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line);
+}
+
+.github-card-meta,
+.github-card-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.75rem;
+}
+
+.github-card-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--ink-muted);
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.github-card-stat i {
+    color: #c4a484;
+    font-size: 0.72rem;
+}
+
+.github-lang-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--github-lang-color, #8a8179);
+    box-shadow: 0 0 0 2px rgba(29, 26, 23, 0.05);
+}
+
+.github-card-link,
+.github-card-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--brand);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.github-card-live {
+    color: var(--ink-muted);
+}
+
+.github-card-link:hover,
+.github-card-live:hover {
+    color: var(--brand-deep);
+    text-decoration: underline;
+}
+
+.github-projects-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.25rem;
+    padding: 1rem 1.15rem;
+    border: 1px dashed rgba(122, 47, 54, 0.28);
+    border-radius: var(--radius);
+    background: linear-gradient(120deg, var(--brand-soft), rgba(47, 69, 80, 0.08));
+}
+
+.github-projects-cta p {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 0.87rem;
+    line-height: 1.5;
+}
+
+.github-projects-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.95rem;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.github-projects-all:hover {
+    background: var(--brand-deep);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+    .github-projects-grid {
+        gap: 0.75rem;
+    }
+
+    .github-projects-rail-actions {
+        padding-top: 0;
+    }
+}

@@ -1,0 +1,73 @@
+{
+  "_help": "To add a project, copy an object inside 'projects' and change its values. Required: name, url. Optional: description, language, stars, topics (array), homepage.",
+  "username": "GeeSuth",
+  "profileUrl": "https://github.com/GeeSuth?tab=repositories",
+  "intro": "Open-source tools, libraries, and experiments I build and maintain on GitHub.",
+  "projects": [
+    {
+      "name": "GeeSuthSoft.KSA.ZATCA",
+      "url": "https://github.com/GeeSuth/GeeSuthSoft.KSA.ZATCA",
+      "description": "Unofficial .NET toolkit for Saudi Arabia's ZATCA e-invoicing requirements — QR generation, invoice signing, and compliance helpers.",
+      "language": "C#",
+      "stars": 22,
+      "topics": ["ZATCA", "e-invoicing", "QR code"]
+    },
+    {
+      "name": "TokenEndpointAccessCheck",
+      "url": "https://github.com/GeeSuth/TokenEndpointAccessCheck",
+      "description": "Security utility that checks OAuth/OIDC token endpoints for missing authorization and token-leak vulnerabilities.",
+      "language": "C#",
+      "stars": 6,
+      "topics": ["Security", "OAuth", "JWT"]
+    },
+    {
+      "name": "SSLReport",
+      "url": "https://github.com/GeeSuth/SSLReport",
+      "description": "Windows desktop tool that inspects SSL/TLS certificates and reports expiration, chain, and configuration issues.",
+      "language": "C#",
+      "stars": 0,
+      "topics": ["SSL", "Security", "WinForms"]
+    },
+    {
+      "name": "geesuth.github.io",
+      "url": "https://github.com/GeeSuth/geesuth.github.io",
+      "description": "This portfolio — a fast, data-driven static site hosted on GitHub Pages.",
+      "language": "HTML",
+      "stars": 0,
+      "topics": ["Portfolio", "Static site"],
+      "homepage": "https://geesuth.github.io"
+    },
+    {
+      "name": "Dis-Anime",
+      "url": "https://github.com/GeeSuth/Dis-Anime",
+      "description": "Python-powered anime search engine that finds shows from an uploaded picture.",
+      "language": "Python",
+      "stars": 0,
+      "topics": ["Python", "Image search", "Anime"]
+    },
+    {
+      "name": "LocalizationJsonFileToResx",
+      "url": "https://github.com/GeeSuth/LocalizationJsonFileToResx",
+      "description": "Small Windows utility that converts JSON localization files into .resx resources for .NET projects.",
+      "language": "C#",
+      "stars": 0,
+      "topics": [".NET", "Localization", "Tooling"]
+    },
+    {
+      "name": "GeeSuthSoft.TooKit.Pdf",
+      "url": "https://github.com/GeeSuth/GeeSuthSoft.TooKit.Pdf",
+      "description": "C# toolkit for extracting invoice details from PDF documents.",
+      "language": "C#",
+      "stars": 0,
+      "topics": ["PDF", "Invoicing", ".NET"]
+    },
+    {
+      "name": "AspireSample",
+      "url": "https://github.com/GeeSuth/AspireSample",
+      "description": "Hands-on sample exploring .NET Aspire for building observable, distributed applications.",
+      "language": "C#",
+      "stars": 0,
+      "topics": [".NET Aspire", "Cloud-native"]
+    }
+  ]
+}
