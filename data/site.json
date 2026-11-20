@@ -23,6 +23,7 @@
   "skills": [".NET 8", ".NET 9", "C#", "Blazor", "ASP.NET Core", "Azure"],
   "nav": [
     { "id": "experience", "label": "Work Experience", "href": "#section-experience" },
+    { "id": "github", "label": "GitHub Projects", "href": "#section-github" },
     { "id": "education", "label": "Education & Courses", "href": "#section-education" },
     { "id": "projects", "label": "My Projects", "href": "#section-projects" }
   ],
@@ -38,6 +39,14 @@
         { "id": "exp-itec", "src": "jobs/itec.htm" },
         { "id": "exp-reemas", "src": "jobs/reemas.htm" },
         { "id": "exp-sky", "src": "jobs/skyCenter.htm" }
+      ]
+    },
+    {
+      "id": "github",
+      "title": "GitHub Projects",
+      "eyebrow": "Open Source",
+      "modules": [
+        { "id": "pro-github", "src": "projects/github.htm" }
       ]
     },
     {

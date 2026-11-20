@@ -166,6 +166,9 @@
                 return GeeSuthLoader.loadModules(collectModules(site));
             })
             .then(function () {
+                if (window.GeeSuthGithub) {
+                    window.GeeSuthGithub.renderAll();
+                }
                 setReady(true);
                 handlePdfReferral();
             })
